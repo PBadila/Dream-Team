@@ -17,7 +17,19 @@ let liHeight = document.getElementById('height')
 let liWeight = document.getElementById('weight')
 
 let cardImage = document.querySelector('.card-img-top')
+let addPlayerButton = document.querySelector('#addPlayerButton')
+console.log(addPlayerButton)
 
+//let click = 0
+let playerRoster =[]
+
+let player1 = document.getElementById('player1')
+let player2 = document.getElementById('player2')
+let player3 = document.getElementById('player3')
+let player4 = document.getElementById('player4')
+let player5 = document.getElementById('player5')
+
+let errorMessage= document.getElementById('errorMessage')
 
 form.addEventListener('submit',()=>{
     event.preventDefault()
@@ -111,11 +123,40 @@ form.addEventListener('submit',()=>{
     })
 
 
+})
+ 
+addPlayerButton.addEventListener('click', ()=> {
+    //console.log(cardTitle.innerText)
+    //click+=1
+    //console.log(`li${click}`)
 
+    //make an array, keep pushing to it, and print out array
+    playerRoster.push(cardTitle.innerText)
+    console.log(playerRoster)
 
-    
-    
-
+    for(let i=0;i<playerRoster.length;i++){
+        switch (i) {
+            case 0:
+                player1.innerText = playerRoster[0]
+                break;
+            case 1:
+                player2.innerText = playerRoster[1]
+                break;
+            case 2:
+                player3.innerText = playerRoster[2]
+                break;
+            case 3:
+                player4.innerText = playerRoster[3]
+                break;
+            case 4:
+                player5.innerText = playerRoster[4]
+                break;
+        
+            default:
+                errorMessage.innerText = "You can only have 5 players."
+                break;
+        }
+    }
 
 })
     
