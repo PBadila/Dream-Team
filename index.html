@@ -54,8 +54,56 @@
     </aside>
 
     
-    <aside class="aside aside2">
-      <h1>INSERT NAME</h1>
+    <aside class="aside aside2" id="aside2-container">
+      <h1>Search Player</h1>
+
+
+      <form id="playerForm">
+        <label for = "playerName">Player's Name: </label>
+        <input type = "text" name = "playerName" id = "playerName">
+        <button id="playerNameButton" type="submit">Submit</button>
+      </form>
+
+      <!--carousel of playing cards-->
+
+    <div id="carouselExampleControls" class="carousel slide" data-interval="false">
+        <!--2--><div class="carousel-inner">
+          <div class="carousel-item active" id="carousel"> <!--active card is first displayed, so card1-->
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top rounded mx-auto d-block activeImage" src="" alt="Active Player Image">
+                <div class="card-body">
+                  <h5 class="card-title col d-flex justify-content-center"></h5>
+                  <p class="card-text">Player Stats</p>
+                 
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item" id="pid"></li>
+                    <li class="list-group-item" id="dob">DOB: </li>
+                    <li class="list-group-item" id="height">HEIGHT: </li>
+                    <li class="list-group-item" id="weight">WEIGHT: </li>
+                  </ul>
+                </div>
+            </div>
+          </div>
+          <div class="carousel-item"><!--card2-->
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top rounded mx-auto d-block" src="./Images/f5f42267e497a8131b8bf1c63fc8ac98--nba-basket-duncan.jpeg" alt="Player Image">
+                <div class="card-body">
+                  <h5 class="card-title col d-flex justify-content-center">Lou Gehrig</h5>
+                  <p class="card-text">Player Stats</p>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Position: 1B</li>
+                    <li class="list-group-item">BA: 0.340</li>
+                    <li class="list-group-item">HR: 493</li>
+                    <li class="list-group-item">R: 1888</li>
+                    <li class="list-group-item">RBI: 1995</li>
+                    <li class="list-group-item">SB: 102</li>
+                  </ul> 
+                </div>
+            </div>
+          </div>
+      </div>  
+    </div>
+
     </aside>
     <footer class="footer">
       <h1>FOOTER</h1>
