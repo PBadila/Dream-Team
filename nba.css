@@ -379,3 +379,17 @@ body{
     flex-direction: row;
     
 }
+
+#aside2-container {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+#carousel {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
