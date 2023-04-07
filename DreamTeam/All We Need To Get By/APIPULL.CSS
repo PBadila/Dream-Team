@@ -120,6 +120,7 @@
     border: 5px solid black;
     background-image: linear-gradient(blue,green);
     padding-top: 10px;
+    margin-bottom:20px;
 }
 
 .card-img-top{
@@ -175,3 +176,15 @@ body{
     opacity: 100%;
 }
 
+#addPlayerButton{
+    margin-top: 10px;
+    padding: 5px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#mainHolder{
+    display:flex;
+    flex-direction: row;
+    
+}
