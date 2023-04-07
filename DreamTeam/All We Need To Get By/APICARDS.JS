@@ -31,6 +31,28 @@ let player5 = document.getElementById('player5')
 
 let errorMessage= document.getElementById('errorMessage')
 
+let remove1 = document.createElement('button')
+remove1.setAttribute('class', 'removeButt')
+remove1.setAttribute('type', 'submit')
+
+let remove2 = document.createElement('button')
+remove2.setAttribute('class', 'removeButt')
+remove2.setAttribute('type', 'submit')
+
+let remove3 = document.createElement('button')
+remove3.setAttribute('class', 'removeButt')
+remove3.setAttribute('type', 'submit')
+
+let remove4 = document.createElement('button')
+remove4.setAttribute('class', 'removeButt')
+remove4.setAttribute('type', 'submit')
+
+let remove5 = document.createElement('button')
+remove5.setAttribute('class', 'removeButt')
+remove5.setAttribute('type', 'submit')
+
+
+
 form.addEventListener('submit',()=>{
     event.preventDefault()
     let formData = new FormData(form)
@@ -121,7 +143,7 @@ form.addEventListener('submit',()=>{
             }
         }
     })
-
+form.reset()
 
 })
  
@@ -138,18 +160,29 @@ addPlayerButton.addEventListener('click', ()=> {
         switch (i) {
             case 0:
                 player1.innerText = playerRoster[0]
+                player1.appendChild(remove1)
+                remove1.innerText= "REMOVE"
+                console.log(remove1)
                 break;
             case 1:
                 player2.innerText = playerRoster[1]
+                player2.appendChild(remove2)
+                remove2.innerText= "REMOVE"
                 break;
             case 2:
                 player3.innerText = playerRoster[2]
+                player3.appendChild(remove3)
+                remove3.innerText= "REMOVE"
                 break;
             case 3:
                 player4.innerText = playerRoster[3]
+                player4.appendChild(remove4)
+                remove4.innerText= "REMOVE"
                 break;
             case 4:
                 player5.innerText = playerRoster[4]
+                player5.appendChild(remove5)
+                remove5.innerText= "REMOVE"
                 break;
         
             default:
@@ -160,4 +193,37 @@ addPlayerButton.addEventListener('click', ()=> {
 
 })
     
+remove1.addEventListener('click',()=>{
+    console.log('clicked')
+    player1.innerText=""
+    playerRoster = playerRoster.splice(1,1)
+    console.log(playerRoster)
+})
 
+remove2.addEventListener('click',()=>{
+    console.log('clicked')
+    player2.innerText=""
+    playerRoster=playerRoster.splice(2,1)
+    console.log(playerRoster)
+})
+
+remove3.addEventListener('click',()=>{
+    console.log('clicked')
+    player3.innerText=""
+    playerRoster=playerRoster.splice(3,1)
+    console.log(playerRoster)
+})
+
+remove4.addEventListener('click',()=>{
+    console.log('clicked')
+    player4.innerText=""
+    playerRoster=playerRoster.splice(4,1)
+    console.log(playerRoster)
+})
+
+remove5.addEventListener('click',()=>{
+    console.log('clicked')
+    player5.innerText=""
+    playerRoster=playerRoster.splice(5,1)
+    console.log(playerRoster)
+})
