@@ -1,75 +1,381 @@
-.slider-container{
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.container{
     width: 100%;
+    min-height: 100vh;
+    padding-left: 8%;
+    padding-right: 8%;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
-
-.wrapper{
+.navbar{
+    width: 100%;
     display: flex;
-    flex-flow: row wrap;
+    align-items: center;
+}
+
+.logo{
+    width: 50px;
+    cursor: pointer;
+    margin: 30px 0;
+}
+
+.menu-icon{
+    width: 25px;
+    cursor: pointer;
+    display: none;
+}
+
+nav{
+    flex: 1;
+    text-align: right;
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 100px 0;
+}
+
+.col-1{
+    flex-basis: 40%;
+    position: relative;
+    margin-left: 50px;
+}
+
+.col-1 h2{
+    font-size: 54px;
+}
+
+.col-1 h3{
+    font-size: 30px;
+    color: blue;
+    font-weight: 100;
+    margin: 20px 0 10px;
+}
+
+.col-1 p{
+    font-size: 16px;
+    color: red;
+    font-weight: 100;
+}
+
+.col-1 h4{
+    margin: 30px 0;
+    font-size: 20px;
+}
+
+button{
+    width: 140px;
+    border: 0;
+    padding: 12px 10px;
+    outline: none;
+    color:aliceblue;
+    background: linear-gradient(to right, red,blue);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: width 0.5s;
+}
+
+button img{
+    width: 30px;
+    display: none;
+}
+
+button:hover img{
+    display: block;
+}
+
+button:hover{
+    width: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.col-1::after{
+    content: '';
+    width: 10px;
+    height: 57%;
+    background: linear-gradient(navy, red);
+    position: absolute;
+    left: -40px;
+    top: 8px;
+}
+
+.col-2{
+    position: relative;
+    flex-basis: 60%;
+    display: flex;
+    align-items: center;
+}
+
+.col-2 .controller{
+    width: 90%;
+}
+
+.color-box{
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: linear-gradient(red, navy);
+    border-radius: 20% 0 0 20px;
+    height: 100%;
+    width: 80%;
+    z-index: -1;
+    transform: translateX(150px);
+}
+
+.add-btn img{
+    width: 35px;
+    margin-bottom: 5px;
+}
+
+.add-btn{
     text-align: center;
+    color: aliceblue;
+    cursor: pointer;
 }
 
-.wrapper>*{
-    padding: 10px;
-    margin: 10px;
-    flex: 1 100%;
-    border-radius: 10px;
-}
-
-.header{
-    background: rgb(1, 1, 107);
-    height: 120px;
-}
-
-.footer{
-    background: red;
-    height: 80px;
-}
-
-.main{
-    text-align: left;
-    background: rgb(7, 0, 97);
-    height: 520px;
-    font-size: 24px;
-}
-
-.aside1{
-    background: greenyellow;
-}
-
-.aside2{
-    background: yellow;
-}
-
-img{
-    height:500px;
-}
-
-
-@media all and (min-width: 800px){
-    .main{
-        flex:3;
+@media only screen and (max-width:700px){
+    nav ul{
+        width:100%;
+        background:linear-gradient(red, navy);
+        position: absolute;
+        top: 75px;
+        right: 0;
+        z-index: 2;
     }
-    .aside1{
-        order: 1;
+    nav ul li{
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
-    .aside2{
-        order: 2;
+    nav ul li a{
+        color: blue;
     }
-    .main{
-        order:2;
+    .menu-icon{
+        display: block;
     }
-    .footer{
-        order: 4;
+    .row{
+        flex-direction: column-reverse;
+        margin: 50px 0;
+    }
+    .col-2{
+        flex-basis: 100%;
+        margin-bottom: 50px;
+    }
+    .col-2 .controller{
+        width: 77%;
+    }
+    .color-box{
+        transform: translateX(75px);
+    }
+    .col-1{
+        flex-basis: 100%;
+    }
+    .col-1 h2{
+        font-size: 35px;
+    }
+    .col-1 h3{
+        font-size: 15px;
     }
 }
 
-@media all and (min-width: 600px){
-    aside{
-        flex: 1;
-    }
+
+/* css for cards */
+
+*
+{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
 }
 
-@media screen {
+#container
+{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    background: rgb(255, 255, 255);
+}
+
+#container #logo
+{
+    position: absolute;
+    left: 8%;
+    top: 30px;
+    font-size: 30px;
+    z-index: 997;
+    font-weight: bold;
+    color: rgb(252, 253, 253);
+}
+
+#navbar
+{
+    height: 90px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgb(11, 0, 110);
+    display: grid;
+    place-items: center;
+}
+
+#navbar ul
+{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+
+#navbar ul li
+{
+    font-size: 20px;
+    margin: 0 45px;
+}
+
+#navbar ul li a
+{
+    text-decoration: none;
+    color: rgb(253, 248, 248);
+}
+
+#navbar ul li a:hover
+{
+    color: rgb(208, 0, 0);
+}
+
+#image
+{
+    position: absolute;
+    top: calc(50% - 300px);
+    right: 5%;
+    z-index: 999;
+}
+
+#image img
+{
+    height: 600px;
+    filter: drop-shadow(-140px -140px 5px black);
+    transition: 0.5s;
+}
+
+#image img:hover
+{
+    filter: drop-shadow(0px 0px 5px black);
+}
+
+#content
+{
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    z-index: 996;
+}
+
+#content h2
+{
+    font-size: 300px;
+    color: rgb(2, 0, 130);
+}
+
+#content h2:hover
+{
+    color: rgb(255, 0, 0);
+    transition: 0.5s;
+}
+#content h4
+{
+    font-size: 70px;
+    color: rgb(22, 0, 122);
+}
+
+#content h4:hover
+{
+    color: rgb(255, 0, 0);
+    transition: 0.5s;
+}
+/*** adding my css after this */
+.card{
+    border: 5px solid black;
+    background-image: linear-gradient(blue,rgb(218, 0, 0));
+    padding-top: 10px;
+    margin-bottom:20px;
+}
+
+.card-img-top{
+    width: 200px;
+    height:200px;
+    object-fit: cover;
+    object-position:5% 5%;
+    border: 2px solid white;
+}
+
+.ha{
+    object-position:40% 10%;
+}
+
+.card-title{
+ 
+    font-weight: bold;
+    margin-bottom:1rem;
+    font-size: 1.5rem;
+    color:white;
+    
+}
+
+.card-text{
+    font-size: 1.1rem;
+    margin-bottom: 0rem;
+    color:white;
+}
+
+body{
+    background-color:rgb(253, 249, 250);
+}
+
+#carouselExampleControls{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+   
+
+}
+.carousel-inner{
+    width:auto;
+    margin-top:5%;
+}
+
+.carousel-control-prev{
+    margin-left:10%;
+}
+
+.carousel-control-next{
+    margin-right:25%;
+    
+    opacity: 100%;
+}
+
+#addPlayerButton{
+    margin-top: 10px;
+    padding: 5px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#mainHolder{
+    display:flex;
+    flex-direction: row;
     
 }
