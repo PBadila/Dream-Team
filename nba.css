@@ -71,7 +71,7 @@ nav{
     font-size: 20px;
 }
 
-button{
+/***button{
     width: 140px;
     border: 0;
     padding: 12px 10px;
@@ -81,9 +81,9 @@ button{
     border-radius: 6px;
     cursor: pointer;
     transition: width 0.5s;
-}
+}*/
 
-button img{
+/* button img{
     width: 30px;
     display: none;
 }
@@ -97,7 +97,7 @@ button:hover{
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
+} */
 
 .col-1::after{
     content: '';
@@ -305,91 +305,4 @@ button:hover{
 {
     color: rgb(255, 0, 0);
     transition: 0.5s;
-}
-/*** adding my css after this */
-.card{
-    border: 5px solid black;
-    background-image: linear-gradient(blue,rgb(218, 0, 0));
-    padding-top: 10px;
-    margin-bottom:20px;
-}
-
-.card-img-top{
-    width: 200px;
-    height:200px;
-    object-fit: cover;
-    object-position:5% 5%;
-    border: 2px solid white;
-}
-
-.ha{
-    object-position:40% 10%;
-}
-
-.card-title{
- 
-    font-weight: bold;
-    margin-bottom:1rem;
-    font-size: 1.5rem;
-    color:white;
-    
-}
-
-.card-text{
-    font-size: 1.1rem;
-    margin-bottom: 0rem;
-    color:white;
-}
-
-body{
-    background-color:rgb(253, 249, 250);
-}
-
-#carouselExampleControls{
-    display:flex;
-    flex-direction: row;
-    justify-content: center;
-   
-
-}
-.carousel-inner{
-    width:auto;
-    margin-top:5%;
-}
-
-.carousel-control-prev{
-    margin-left:10%;
-}
-
-.carousel-control-next{
-    margin-right:25%;
-    
-    opacity: 100%;
-}
-
-#addPlayerButton{
-    margin-top: 10px;
-    padding: 5px;
-    margin-left:auto;
-    margin-right:auto;
-}
-
-#mainHolder{
-    display:flex;
-    flex-direction: row;
-    
-}
-
-#aside2-container {
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-}
-
-#carousel {
-    margin: 20px;
-    display: flex;
-    justify-content: center;
 }

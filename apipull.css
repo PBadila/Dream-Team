@@ -1,0 +1,66 @@
+
+/*** adding my css after this */
+.card{
+    border: 5px solid black;
+    background-image: linear-gradient(blue,green);
+    padding-top: 10px;
+    margin-bottom:20px;
+}
+
+.card-img-top{
+    width: 200px;
+    height:200px;
+    object-fit: cover;
+    object-position:5% 5%;
+    border: 2px solid white;
+}
+
+.ha{
+    object-position:40% 10%;
+}
+
+.card-title{
+ 
+    font-weight: bold;
+    margin-bottom:1rem;
+    font-size: 1.5rem;
+    color:white;
+    
+}
+
+.card-text{
+    font-size: 1.1rem;
+    margin-bottom: 0rem;
+    color:white;
+}
+
+
+
+/***New CSS Starts here*/
+
+#addPlayerButton{
+    margin-top: 10px;
+    padding: 5px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#mainHolder{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.removeButt{
+    padding: 2px;
+    margin-left: 15px;
+    margin-top:10px;
+}
+
+#cardAndForm{
+margin-right:50px;
+}
+
+#playerRoster{
+    margin-left:50px;
+}

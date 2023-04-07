@@ -4,16 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="nba.css">
+    <link rel="stylesheet" href="apipull.css">
     <title>Document</title>
     
-    <link rel="stylesheet" href="nba.css">
+ 
 </head>
 <body>
     <div class="container">
         <div class="navbar">
             <img src="Images/My project (10).png" class="logo">
             <nav></nav>
-            <img src="Images/menu.png" class="menu-icon">
+            <img src="" class="menu-icon">
         </div>
         <div class="row">
             <div class="col-1">
@@ -26,110 +29,69 @@
                 <img src="Images/My project-1 copy.png" class="controller">
                 <div class="color-box"></div>
                 <div class="add-btn">
-                    <img src="Images/add.png">
+                    <img src="">
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="card-container">
-        <div id="carouselExampleControls" class="carousel slide" data-interval="false">
-            <!--2--><div class="carousel-inner">
-              <div class="carousel-item active"> <!--active card is first displayed, so card1-->
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top rounded mx-auto d-block activeImage" src="./images/nbaLogo.png" alt="Active Player Image">
-                    <div class="card-body">
-                      <h5 class="card-title col d-flex justify-content-center"></h5>
-                      <p class="card-text">Player Stats</p>
-                     
-                      <ul class="list-group list-group-flush">
-    
+    <div id="mainHolder">
+      <div id="cardAndForm">
+          <!--This is the player card that gets populated based on player name entered. It uses bootstrap for the formatting.-->
+          
+      
+          <div class="card" style="width: 18rem;">
+              <img class="card-img-top rounded mx-auto d-block activeImage" src="./images/nbaLogo.png" alt="Active Player Image">
+              <div class="card-body">
+              <h5 class="card-title col d-flex justify-content-center"></h5>
+              <p class="card-text">Player Stats</p>
+              
+              <ul class="list-group list-group-flush">
 
-                        <li class="list-group-item" id="pid">ID:       </li>
-                        <li class="list-group-item" id="dob">DOB: </li>
-                        <li class="list-group-item" id="height">HEIGHT: </li>
-                        <li class="list-group-item" id="weight">WEIGHT: </li>
-                       
-                      </ul>
-                    </div>
-                
-                </div>
+                  <li class="list-group-item" id="pid">ID: </li>
+                  <li class="list-group-item" id="dob">DOB: </li>
+                  <li class="list-group-item" id="height">HEIGHT: </li>
+                  <li class="list-group-item" id="weight">WEIGHT: </li>
+              
+              </ul>
+              <button id="addPlayerButton">Add to Fantasy Roster</button>
               </div>
-
-    <aside class="aside aside2" id="aside2-container">
-      <h1>Search Player</h1>
-        <input type = "text" name = "playerName" id = "playerName">
-
-
-      <form id="playerForm">
-        <label for = "playerName">Player's Name: </label>
-        <button id="playerNameButton" type="submit">Submit</button>
-      </form>
-
-      <!--carousel of playing cards-->
-
-    <div id="carouselExampleControls" class="carousel slide" data-interval="false">
-        <!--2--><div class="carousel-inner">
-          <div class="carousel-item active" id="carousel"> <!--active card is first displayed, so card1-->
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top rounded mx-auto d-block activeImage" src="" alt="Active Player Image">
-                <div class="card-body">
-                  <h5 class="card-title col d-flex justify-content-center"></h5>
-                  <p class="card-text">Player Stats</p>
-                 
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item" id="pid"></li>
-                    <li class="list-group-item" id="dob">DOB: </li>
-                    <li class="list-group-item" id="height">HEIGHT: </li>
-                    <li class="list-group-item" id="weight">WEIGHT: </li>
-                  </ul>
-                </div>
-            </div>
           </div>
-          <div class="carousel-item"><!--card2-->
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top rounded mx-auto d-block" src="./Images/f5f42267e497a8131b8bf1c63fc8ac98--nba-basket-duncan.jpeg" alt="Player Image">
-                <div class="card-body">
-                  <h5 class="card-title col d-flex justify-content-center">Lou Gehrig</h5>
-                  <p class="card-text">Player Stats</p>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Position: 1B</li>
-                    <li class="list-group-item">BA: 0.340</li>
-                    <li class="list-group-item">HR: 493</li>
-                    <li class="list-group-item">R: 1888</li>
-                    <li class="list-group-item">RBI: 1995</li>
-                    <li class="list-group-item">SB: 102</li>
-                  </ul> 
-                </div>
-            </div>
-          </div>
-      </div>  
-    </div>
+
+          <!--This is the input for player's name-->
+          
+              
+            <input type = "text" id = "playerName">
+            <button id="playerNameButton">Submit</button>
+      </div>
+      <!--This div holds the player's roster-->
+      <div id="playerRoster">
+          <h1>Fantasy Roster</h1>
+          <ol>
+              <li id="player1"></li>
+              <li id="player2"></li>
+              <li id="player3"></li>
+              <li id="player4"></li>
+              <li id="player5"></li>
+          </ol>
+          <h2 id="errorMessage"></h2>
+      </div>
+  </div>
 
     </aside>
-    <footer class="footer">
-      <h1>FOOTER</h1>
-    </footer>
+  
   </div>
 
 
 
 
-              <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only"></span>
-              </a> 
-            
-          <!--1--></div> 
-      
-          <form id="playerForm">
-          
-            <label for = "playerName">Player's Name: </label>
-            <input type = "text" name = "playerName" id = "playerName">
-            <button id="playerNameButton" type="submit">Submit</button>
-          </form>
+              
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
-    <script src="script.js"></script>
+    <script src="apicards.js" type="module"></script>
+    
 </body>
 </html>

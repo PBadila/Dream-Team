@@ -20,6 +20,7 @@ let cardImage = document.querySelector('.card-img-top')
 let addPlayerButton = document.querySelector('#addPlayerButton')
 console.log(addPlayerButton)
 
+
 //let click = 0
 let playerRoster =[]
 
@@ -51,30 +52,19 @@ let remove5 = document.createElement('button')
 remove5.setAttribute('class', 'removeButt')
 remove5.setAttribute('type', 'submit')
 
+let submitBtn = document.getElementById('playerNameButton')
+let playerName = document.getElementById('playerName')
 
-
-form.addEventListener('submit',()=>{
-    event.preventDefault()
-    let formData = new FormData(form)
-    let playerName = formData.get('playerName')
-    console.log(form)
-    console.log(playerName)
-    //separate first and last name in string
-    let name = playerName.split(" ")
+submitBtn.addEventListener('click', ()=>{
+    console.log('clicked FOR REAL')
+    let playerNameValue = playerName.value
+    let name = playerNameValue.split(" ")
     let firstName = name[0].toLowerCase()
-    console.log(firstName)
     let firstNameCap = firstName.slice(0,1)
-    console.log(firstNameCap)
     firstNameCap=(firstNameCap.toUpperCase())+(firstName.slice(1,firstName.length))
-    console.log(firstNameCap)
     let lastName = name[1].toLowerCase()
-    console.log(lastName)
     let lastNameCap = lastName.slice(0,1)
-    console.log(lastNameCap)
     lastNameCap=(lastNameCap.toUpperCase())+(lastName.slice(1,lastName.length))
-    console.log(lastNameCap)
-
-    
 
     const options = {
         method: 'GET',
@@ -119,23 +109,23 @@ form.addEventListener('submit',()=>{
 
             switch (playerID) {
                 case 124:
-                    cardImage.src="./images/curry.jpeg"
+                    cardImage.src="./Images/curry.jpeg"
                     break;
                 case 153:
-                    cardImage.src="./images/durant.jpeg"
+                    cardImage.src="./Images/durant.jpeg"
                     break;
                 case 265:
-                    cardImage.src="./images/lebron.jpeg"
+                    cardImage.src="./Images/lebron.jpeg"
                     break;
                 case 159:
-                    cardImage.src="./images/embiid.jpeg"
+                    cardImage.src="./Images/embiid.jpeg"
                     break;
                 case 882:
-                    cardImage.src="./images/tatum.jpeg"
+                    cardImage.src="./Images/tatum.jpeg"
                     break;
             
                 default:
-                    cardImage.src="./images/nbaLogo.png"
+                    cardImage.src="./Images/nbaLogo.png"
                     break;
             }
 
@@ -143,14 +133,106 @@ form.addEventListener('submit',()=>{
             }
         }
     })
-form.reset()
-
+    playerName.value=''
 })
+
+// form.addEventListener('submit',(evenrt)=>{
+//     console.log('clicked')
+//     event.preventDefault()
+//     let formData = new FormData(form)
+//     let playerName = formData.get('playerName')
+//     console.log(form)
+//     console.log(playerName)
+//     //separate first and last name in string
+//     let name = playerName.split(" ")
+//     let firstName = name[0].toLowerCase()
+//     console.log(firstName)
+//     let firstNameCap = firstName.slice(0,1)
+//     console.log(firstNameCap)
+//     firstNameCap=(firstNameCap.toUpperCase())+(firstName.slice(1,firstName.length))
+//     console.log(firstNameCap)
+//     let lastName = name[1].toLowerCase()
+//     console.log(lastName)
+//     let lastNameCap = lastName.slice(0,1)
+//     console.log(lastNameCap)
+//     lastNameCap=(lastNameCap.toUpperCase())+(lastName.slice(1,lastName.length))
+//     console.log(lastNameCap)
+
+    
+
+//     const options = {
+//         method: 'GET',
+//         headers: {
+//             'X-RapidAPI-Key': `${API_TOKEN}`,
+//             'X-RapidAPI-Host': 'api-nba-v1.p.rapidapi.com'
+//         }
+//     }
+
+//     fetch(`https://api-nba-v1.p.rapidapi.com/players?name=${lastName}`, options)
+// 	.then(response => response.json())
+
+// 	.then(data=>{
+//        console.log(data.response)
+//        for(let i = 0; i < data.response.length; i++){
+
+//             if(data.response[i].firstname.toLowerCase() === firstName){
+//             //clear out prev data
+//             cardTitle.innerText=""
+//             liPID.innerText="ID: "
+//             liDOB.innerText="DOB: "
+//             liHeight.innerText="HEIGHT: "
+//             liWeight.innerText="WEIGHT: "
+//             //console.log('yeah')
+//             //console.log(data.response[i].id)
+//             cardTitle.innerText = `${firstNameCap} ${lastNameCap}`
+//             playerID = data.response[i].id
+//             //console.log(playerID)
+//             liPID.insertAdjacentText(`beforeend`,` ${playerID.toString()}`) 
+//             playerBirthday = data.response[i].birth.date
+//             //console.log(playerBirthday)
+//             liDOB.insertAdjacentText(`beforeend`,`${playerBirthday.toString()}`)
+//             playerHeightFeet = data.response[i].height.feets
+//             //console.log(playerHeightFeet)
+//             playerHeightInches = data.response[i].height.inches
+//             //console.log(playerHeightInches)
+//             liHeight.insertAdjacentText(`beforeend`,`${playerHeightFeet.toString()}' ${playerHeightInches.toString()}" `)
+//             playerWeight = data.response[i].weight.pounds
+//             //console.log(playerWeight)
+//             liWeight.insertAdjacentText(`beforeend`,`${playerWeight.toString()} lbs`)
+            
+
+//             switch (playerID) {
+//                 case 124:
+//                     cardImage.src="./Images/curry.jpeg"
+//                     break;
+//                 case 153:
+//                     cardImage.src="./Images/durant.jpeg"
+//                     break;
+//                 case 265:
+//                     cardImage.src="./Images/lebron.jpeg"
+//                     break;
+//                 case 159:
+//                     cardImage.src="./Images/embiid.jpeg"
+//                     break;
+//                 case 882:
+//                     cardImage.src="./Images/tatum.jpeg"
+//                     break;
+            
+//                 default:
+//                     cardImage.src="./Images/nbaLogo.png"
+//                     break;
+//             }
+
+            
+//             }
+//         }
+//     })
+// form.reset()
+
+// })
  
 addPlayerButton.addEventListener('click', ()=> {
-    //console.log(cardTitle.innerText)
-    //click+=1
-    //console.log(`li${click}`)
+   
 
     //make an array, keep pushing to it, and print out array
     playerRoster.push(cardTitle.innerText)
@@ -196,34 +278,34 @@ addPlayerButton.addEventListener('click', ()=> {
 remove1.addEventListener('click',()=>{
     console.log('clicked')
     player1.innerText=""
-    playerRoster = playerRoster.splice(1,1)
+    playerRoster.splice(0,1)
     console.log(playerRoster)
 })
 
 remove2.addEventListener('click',()=>{
     console.log('clicked')
     player2.innerText=""
-    playerRoster=playerRoster.splice(2,1)
+    playerRoster.splice(1,1)
     console.log(playerRoster)
 })
 
 remove3.addEventListener('click',()=>{
     console.log('clicked')
     player3.innerText=""
-    playerRoster=playerRoster.splice(3,1)
+    playerRoster.splice(2,1)
     console.log(playerRoster)
 })
 
 remove4.addEventListener('click',()=>{
     console.log('clicked')
     player4.innerText=""
-    playerRoster=playerRoster.splice(4,1)
+    playerRoster.splice(3,1)
     console.log(playerRoster)
 })
 
 remove5.addEventListener('click',()=>{
     console.log('clicked')
     player5.innerText=""
-    playerRoster=playerRoster.splice(5,1)
+    playerRoster.splice(4,1)
     console.log(playerRoster)
 })
